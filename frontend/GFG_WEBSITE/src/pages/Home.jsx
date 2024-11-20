@@ -20,8 +20,9 @@ function Home() {
     }, 1000);
   };
 
-  const myData = () => {
+  const myData = (req, res) => {
     navigate("/mydata");
+    console.log("helllo data");
   };
   return (
     <div>

@@ -66,98 +66,113 @@ function Login() {
 
   return (
     // bg-green-100 background-image: linear-gradient(to right, var(--tw-gradient-stops))
-    <div className="  flex items-center justify-center min-h-screen bg-background-pattern1 bg-cover h-screen">
-      <div className=" bg-white/25 backdrop-blur-sm border-1 border-blue-950 drop-shadow-lg  flex flex-col items-center justify-center h-fit px-10 py-6 rounded-2xl ">
-        <h2 className="text-2xl font-bold text-center text-gray-800 mb-6">
-          Login
-        </h2>
-        <form method="post" action="#" onSubmit={handleLogin}>
-          {/* <div>
-            <label
-              htmlFor="name"
-              className="block text-sm font-medium text-gray-700 "
-            >
-              Username
-            </label>
-            <input
-              onChange={handleChange}
-              type="text"
-              autoFocus
-              placeholder="Enter Username"
-              name="name"
-              value={loginInfo.name}
-              className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm mb-3"
-            />
-          </div> */}
-
-          <div>
-            <label
-              className="block text-sm font-medium text-black"
-              htmlFor="email"
-            >
-              Email
-            </label>
-            <input
-              onChange={handleChange}
-              type="email"
-              autoFocus
-              placeholder="Enter email"
-              name="email"
-              value={loginInfo.email}
-              className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm  mb-3"
-            />
-          </div>
-
-          <div>
-            <label
-              className="block text-sm font-medium text-black"
-              htmlFor="password"
-            >
-              Password
-            </label>
-            <input
-              onChange={handleChange}
-              type="password"
-              placeholder="Enter password"
-              name="password"
-              value={loginInfo.password}
-              className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm  mb-3"
-            />
-          </div>
-
-          <button
-            type="submit"
-            className="w-full bg-red-500 text-white p-1 rounded-md shadow-sm hover:bg-green-600 focus:outline-none  mt-6 text-center align-middle justify-center"
+    <>
+      <div>
+        {/* left */}
+        {/* <div>
+          <img
+            src="src/assets/GFG_SC_LOGO.png"
+            alt="Sample"
+            className="w-full h-full object-cover opacity-80"
+          />
+        </div> */}
+        {/* right */}
+        <div>
+          <div className="  flex items-center justify-center min-h-screen bg-background-pattern1 bg-cover h-screen">
+            <div className=" bg-white/25 backdrop-blur-sm border-1 border-blue-950 drop-shadow-lg  flex flex-col items-center justify-center h-fit px-10 py-6 rounded-2xl ">
+              <h2 className="text-2xl font-bold text-center text-gray-800 mb-6">
+                Login
+              </h2>
+              <form method="post" action="#" onSubmit={handleLogin}>
+                {/* <div>
+          <label
+            htmlFor="name"
+            className="block text-sm font-medium text-gray-700 "
           >
-            Login
-          </button>
-          <div className="m-2">
-            <span>
-              Don't have an account ?{" "}
-              <Link
-                className="text-white hover:underline hover:text-cyan-300"
-                to="/signup"
-              >
-                Signup
-              </Link>
-            </span>
+            Username
+          </label>
+          <input
+            onChange={handleChange}
+            type="text"
+            autoFocus
+            placeholder="Enter Username"
+            name="name"
+            value={loginInfo.name}
+            className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm mb-3"
+          />
+        </div> */}
+
+                <div>
+                  <label
+                    className="block text-sm font-medium text-black"
+                    htmlFor="email"
+                  >
+                    Email
+                  </label>
+                  <input
+                    onChange={handleChange}
+                    type="email"
+                    autoFocus
+                    placeholder="Enter email"
+                    name="email"
+                    value={loginInfo.email}
+                    className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm  mb-3"
+                  />
+                </div>
+
+                <div>
+                  <label
+                    className="block text-sm font-medium text-black"
+                    htmlFor="password"
+                  >
+                    Password
+                  </label>
+                  <input
+                    onChange={handleChange}
+                    type="password"
+                    placeholder="Enter password"
+                    name="password"
+                    value={loginInfo.password}
+                    className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm  mb-3"
+                  />
+                </div>
+
+                <button
+                  type="submit"
+                  className="w-full bg-red-500 text-white p-1 rounded-md shadow-sm hover:bg-green-600 focus:outline-none  mt-6 text-center align-middle justify-center"
+                >
+                  Login
+                </button>
+                <div className="m-2">
+                  <span>
+                    Don't have an account ?{" "}
+                    <Link
+                      className="text-white hover:underline hover:text-cyan-300"
+                      to="/signup"
+                    >
+                      Signup
+                    </Link>
+                  </span>
+                </div>
+              </form>
+              <ToastContainer
+                position="top-left"
+                autoClose={5000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                theme="light"
+                transition:Bounce
+              />
+            </div>
           </div>
-        </form>
-        <ToastContainer
-          position="top-left"
-          autoClose={5000}
-          hideProgressBar={false}
-          newestOnTop={false}
-          closeOnClick
-          rtl={false}
-          pauseOnFocusLoss
-          draggable
-          pauseOnHover
-          theme="light"
-          transition:Bounce
-        />
+        </div>
       </div>
-    </div>
+    </>
   );
 }
 

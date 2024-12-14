@@ -2,8 +2,10 @@ import React, { useEffect, useState } from "react";
 import { Link, Navigate, useNavigate } from "react-router-dom";
 import { handleSuccess } from "../utils";
 import { ToastContainer } from "react-toastify";
-import ProfileCard from "../components/ProfileCard";
 import Slider from "../components/Slider";
+import CoreTeam from "../blocks/CoreTeam";
+import Offerings from "../blocks/Offerings";
+import ContactUs from "../blocks/ContactUs";
 
 function Home() {
   const [loggedInUser, setloggedInUser] = useState();
@@ -22,30 +24,13 @@ function Home() {
     }, 1000);
   };
 
-  const teamMembers = [
-    { name: "Anshuman Mishra", role: "Chairperson", img: "/avatar.jpeg" },
-    { name: "Aditya Raj", role: "Vice Chairperson", img: "/assets/aditya.jpg" },
-    { name: "Piyush Keshari", role: "Event Head", img: "/assets/piyush.png" },
-    {
-      name: "Anuj Vishwakarma",
-      role: "Technical Head",
-      img: "/assets/anuj.jpg",
-    },
-    {
-      name: "Sakshi Aggrawal",
-      role: "Content Head",
-      img: "/assets/sakshi.png",
-    },
-    { name: "Sameer", role: "GD/Branding Head", img: "/avatar.jpeg" },
-  ];
-
   return (
     <div>
-      <nav className="w-full  p-1 rounded-md shadow-sm  mt-6 text-center align-middle justify-center">
-        <div className=" text-6xl ml-2 inline-block gap-5 text-fuchsia-200">
+      <nav className=" flex flex-row  p-1 rounded-md shadow-sm  m-6 text-center justify-center">
+        <div className=" text-3xl ml-2 inline-block gap-5 text-fuchsia-400">
           Welcome {loggedInUser}
         </div>
-        <div className="m-6">
+        <div className="">
           <button
             className="bg-yellow-200 m-1 p-1 text-black rounded-md hover:bg-red-400"
             onClick={handleLogout}
@@ -67,8 +52,6 @@ function Home() {
           <ToastContainer />
         </div>
       </nav>
-
-      {/*  */}
 
       <section className="flex flex-wrap p-8 items-center bg-green-50">
         <div className="w-full lg:w-1/2">
@@ -94,21 +77,17 @@ function Home() {
           />
         </div>
       </section>
+      <Offerings />
 
-      <div className="p-8">
-        <h2 className="text-3xl font-bold text-center">OUR CORE TEAM</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-6">
-          {teamMembers.map((member, index) => (
-            <>
-              <ProfileCard coreTeam={member} />
-            </>
-          ))}
-        </div>
+      <CoreTeam />
+
+      <div className="my-20 grid place-items-center ">
+        <Link className="bg-[#31EDCE] p-4 font-serif rounded-md" to="/TeamPage">
+          Visit our Teams
+        </Link>
       </div>
 
-      <div>
-        <Link to="/TeamPage">Visit our Teams</Link>
-      </div>
+      <ContactUs />
     </div>
   );
 }

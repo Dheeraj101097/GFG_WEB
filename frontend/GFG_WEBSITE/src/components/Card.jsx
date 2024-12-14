@@ -6,7 +6,7 @@ const Card = (teamData) => {
     <div class="flex flex-col bg-white shadow-sm border border-slate-200 rounded-lg my-6 w-96">
       <div class="m-2.5 overflow-hidden rounded-md h-80 flex justify-center items-center">
         <img
-          class="w-full h-full object-cover"
+          class="w-full h-full object-contain"
           src={teamData.teamData.img}
           alt={teamData.teamData.name}
         />

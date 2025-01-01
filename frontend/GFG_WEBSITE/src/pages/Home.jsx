@@ -6,6 +6,7 @@ import Slider from "../components/Slider";
 import CoreTeam from "../blocks/CoreTeam";
 import Offerings from "../blocks/Offerings";
 import ContactUs from "../blocks/ContactUs";
+import Navbar from "../components/Navbar";
 
 function Home() {
   const [loggedInUser, setloggedInUser] = useState();
@@ -25,38 +26,15 @@ function Home() {
   };
 
   return (
-    <div>
-      <nav className=" flex flex-row  p-1 rounded-md shadow-sm  m-6 text-center justify-center">
-        <div className=" text-3xl ml-2 inline-block gap-5 text-fuchsia-400">
-          Welcome {loggedInUser}
-        </div>
-        <div className="">
-          <button
-            className="bg-yellow-200 m-1 p-1 text-black rounded-md hover:bg-red-400"
-            onClick={handleLogout}
-          >
-            Logout
-          </button>
-          <button
-            className="bg-yellow-200 m-1 p-1 text-black rounded-md hover:bg-red-400"
-            onClick={Navigate("/home")}
-          >
-            Login
-          </button>
-          <button
-            className="bg-yellow-200 m-1 p-1 text-black rounded-md hover:bg-red-400"
-            onClick={Navigate("/home")}
-          >
-            Signin
-          </button>
-          <ToastContainer />
-        </div>
-      </nav>
-
+    <div style={{ backgroundImage: "linear-gradient(115deg, #0F9D58, #A8E6CF)" }}>
+    <Navbar user={loggedInUser} handleLogout={handleLogout}/>
       <section className="flex flex-wrap p-8 items-center bg-green-50">
-        <div className="w-full lg:w-1/2">
-          <h1 className="text-4xl font-bold mb-4">
-            AIM OF GFG STUDENT CHAPTER GGV:
+        <div className="w-full">
+          <h1
+            className="text-4xl font-bold mb-4 text-gray-800 text-center"
+            id="aim"
+          >
+            OUR AIM
           </h1>
           <p>
             The aim of the Geeks for Geeks (GFG) Student Chapter is to foster a

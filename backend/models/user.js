@@ -16,6 +16,11 @@ const UserSchema = new Schema(
       type: String,
       required: true,
     },
+    userId: {
+      type: String,
+      required: true,
+      unique: true,
+    },
   },
   { timestamps: true }
 );

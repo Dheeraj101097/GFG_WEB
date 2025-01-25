@@ -218,12 +218,13 @@ export default function Login() {
       const result = await response.json();
 
       // we add jwttoken and name check
-      const { success, message, jwtToken, name, error } = result;
+      const { success, message, jwtToken, name, error, userId } = result;
       if (success) {
         handleSuccess(message);
         // before going
         localStorage.setItem("token", jwtToken);
         localStorage.setItem("loggedInUser", name);
+        localStorage.setItem("userId", userId);
         setTimeout(() => {
           navigate("/home");
         }, 1500);
@@ -249,12 +250,10 @@ export default function Login() {
             <h2 className="text-3xl mb-4">
               Login to{" "}
               <span className="text-green-600 font-medium">
-                gfgstudentchapterggv
+                GfG Student Chapter GGV
               </span>
             </h2>
-            <p className="mb-4">
-              Log in to re-enter the Matrix
-            </p>
+            <p className="mb-4">Log in to re-enter the Matrix</p>
             <form method="post" action="#" onSubmit={handleLogin}>
               {/* <div className="mt-5 text-inherit">
                 <input
@@ -297,14 +296,20 @@ export default function Login() {
                 </button>
               </div>
               <p>
-              Don't have an account ?{" "}
+                Don't have an account ?{" "}
                 <a href="/signup" className="text-green-800">
                   Click here.
                 </a>
               </p>
             </form>
           </div>
-          <div className="w-full lg:w-1/2 flex flex-col items-center justify-center p-12 bg-no-repeat bg-cover bg-center bg-green-600" style={{backgroundImage: "url('https://img.freepik.com/free-vector/virtual-graduation-ceremony-with-college-graduate_23-2148571733.jpg?t=st=1735649807~exp=1735653407~hmac=08a88fa677356286cf37e680d1cc4221cc650a96ce79299f96cd63e157aa6d6d&w=740')"}}>
+          <div
+            className="w-full lg:w-1/2 flex flex-col items-center justify-center p-12 bg-no-repeat bg-cover bg-center bg-green-600"
+            style={{
+              backgroundImage:
+                "url('https://img.freepik.com/free-vector/virtual-graduation-ceremony-with-college-graduate_23-2148571733.jpg?t=st=1735649807~exp=1735653407~hmac=08a88fa677356286cf37e680d1cc4221cc650a96ce79299f96cd63e157aa6d6d&w=740')",
+            }}
+          >
             {/* <h2 className="text-2xl text-white font-bold mb-4 text-center">
               Welcome to{" "}
               <span className="text-white text-3xl">

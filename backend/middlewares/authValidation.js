@@ -13,6 +13,7 @@ const signupValidation = (req, res, next) => {
       .email({ minDomainSegments: 2, tlds: { allow: ["com", "net"] } }) //from documentation
       .required(),
     password: Joi.string().min(3).max(100).required(),
+    userId: Joi.string(),
   });
 
   const { error } = schema.validate(req.body);
